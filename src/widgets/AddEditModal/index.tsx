@@ -120,6 +120,10 @@ const AddEditModal: React.FC<AddEditModalProps> = ({
             size="large"
             format="YYYY-MM-DD"
             style={{ width: "100%" }}
+            disabledDate={(current) => {
+              // Заблокировать все даты после сегодняшнего дня
+              return current && current > dayjs();
+            }}
           />
         </Form.Item>
       </Form>
